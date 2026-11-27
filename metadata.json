@@ -1,0 +1,6 @@
+{
+  "name": "CruiseCrew Academy",
+  "description": "Platform AI pedoman kerja, pelatihan per divisi, kuis, simulasi role-play, dan wawancara kerja untuk calon dan kru kapal pesiar Indonesia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

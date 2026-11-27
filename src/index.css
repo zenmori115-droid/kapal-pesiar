@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    font-family: var(--font-body);
+    background-color: #050B1F;
+    color: #F4F7FF;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.bg-ocean-gradient {
+  background: linear-gradient(160deg, #050B1F 0%, #0A1433 48%, #0D1B4A 100%);
+}
+
+.glass-card {
+  background: rgba(20, 40, 100, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(90, 150, 255, 0.25);
+  box-shadow: 0 0 24px rgba(47, 107, 255, 0.16);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-interactive:hover {
+  border-color: rgba(90, 162, 255, 0.5);
+  box-shadow: 0 0 30px rgba(47, 107, 255, 0.36);
+  transform: translateY(-2px);
+}
+
+.cta-orange {
+  background: linear-gradient(135deg, #FF7A1A 0%, #FFA24D 100%);
+  box-shadow: 0 0 22px rgba(255, 122, 26, 0.48);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.2s ease;
+}
+
+.cta-orange:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255, 122, 26, 0.68);
+  filter: brightness(1.05);
+}
+
+.cta-orange:active:not(:disabled) {
+  transform: translateY(0px);
+}
+
+.hero-title-glow {
+  text-shadow: 0 0 28px rgba(90, 162, 255, 0.38), 0 2px 12px rgba(5, 11, 31, 0.7);
+}
+
+.progress-bar-glow {
+  background: linear-gradient(90deg, #2F6BFF 0%, #5AA2FF 45%, #FF7A1A 100%);
+  box-shadow: 0 0 14px rgba(255, 122, 26, 0.45);
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(24px, -18px, 0) scale(1.06);
+  }
+}
+
+@keyframes floatSlowReverse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-22px, 20px, 0) scale(1.05);
+  }
+}
+
+@keyframes shimmerGlow {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-orb-blue {
+  animation: floatSlow 18s ease-in-out infinite;
+}
+
+.animate-orb-orange {
+  animation: floatSlowReverse 22s ease-in-out infinite;
+}
+
+.skeleton-glow {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 40, 100, 0.35) 25%,
+    rgba(47, 107, 255, 0.28) 50%,
+    rgba(20, 40, 100, 0.35) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmerGlow 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-orb-blue,
+  .animate-orb-orange,
+  .skeleton-glow {
+    animation: none;
+  }
+}
+
+/* Markdown prose for Senior AI chat */
+.academy-markdown p {
+  margin-bottom: 0.75rem;
+  line-height: 1.65;
+}
+.academy-markdown p:last-child {
+  margin-bottom: 0;
+}
+.academy-markdown ul,
+.academy-markdown ol {
+  margin: 0.5rem 0 0.85rem 1.25rem;
+}
+.academy-markdown ul {
+  list-style-type: disc;
+}
+.academy-markdown ol {
+  list-style-type: decimal;
+}
+.academy-markdown li {
+  margin-bottom: 0.35rem;
+  line-height: 1.6;
+}
+.academy-markdown strong {
+  color: #F4F7FF;
+  font-weight: 600;
+}
+.academy-markdown h1,
+.academy-markdown h2,
+.academy-markdown h3 {
+  font-family: var(--font-display);
+  color: #F4F7FF;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.academy-markdown h3 {
+  font-size: 1rem;
+}
+.academy-markdown code {
+  background: rgba(47, 107, 255, 0.2);
+  padding: 0.12rem 0.35rem;
+  border-radius: 0.35rem;
+  font-size: 0.875em;
+}
+.academy-markdown blockquote {
+  border-radius: 0.75rem;
+  background: rgba(47, 107, 255, 0.14);
+  border: 1px solid rgba(90, 150, 255, 0.28);
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+  color: #DDE8FF;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(5, 11, 31, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(90, 150, 255, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(90, 162, 255, 0.5);
+}
+
+/* Print CSS for digital Certificate */
+@media print {
+  @page {
+    size: landscape;
+    margin: 12mm;
+  }
+  body {
+    background: #050B1F !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-certificate-only {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 9999 !important;
+    background: #050B1F !important;
+  }
+}
